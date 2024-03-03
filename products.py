@@ -40,7 +40,8 @@ class MainWindow(QMainWindow):
             for thread in threads:
                 thread.join()
             end_time = time.perf_counter()
-
+            
+            # Write to JSON
             with open('products.json', 'w') as f:
                 json.dump(self.products, f, indent=4)
 
